@@ -1,9 +1,9 @@
 import express from 'express';
+import ClassesController from './controllers/ClassesController';
 
 const routes = express.Router();
+const classesController = new ClassesController();
 
-routes.get('/', (req, res) => {
-	return res.json({message: 'test'});
-});
+routes.post('/classes', classesController.create);
 
 export default routes;
